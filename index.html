@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talouzte Sohayb | Ingénieur en Systèmes Embarqués</title>
+  <meta name="description" content="Découvrez le CV en ligne de Talouzte Sohayb, Ingénieur en Systèmes Embarqués et Mécatronique Automobile. Projets Arduino, ANPR, GPS Tracker, et stages chez Aptiv & Renault.">
+  
+  <!-- Modern Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="style.css?v=1.0.1">
+</head>
+<body>
+  
+  <!-- Animated Background Elements -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Main Container -->
+  <div class="app-container">
+    
+    <!-- Left Profile & Nav Column (Sidebar) -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <!-- Profile Header Area (Photo side-by-side with Name) -->
+        <div class="profile-header-horizontal">
+          <div class="avatar-container">
+            <div class="avatar-glow"></div>
+            <div class="avatar-inner">
+              <img src="profile.jpg" alt="Talouzte Sohayb" class="avatar-img" id="cv-avatar-img">
+            </div>
+            <!-- Hidden overlay in edit mode to change color -->
+            <div class="avatar-edit-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-camera"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            </div>
+          </div>
+
+          <div class="profile-info-horizontal">
+            <h1 class="profile-name" data-editable id="cv-name">Talouzte Sohayb</h1>
+            <p class="profile-title" data-editable id="cv-headline">Ingénieur en Systèmes Embarqués</p>
+            <div class="location-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-map"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span data-editable id="cv-location">Fès, Maroc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Contacts List -->
+        <ul class="contact-list">
+          <li>
+            <a href="mailto:sohaybtal1@gmail.com" id="link-email" class="contact-item">
+              <span class="contact-icon email-bg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </span>
+              <div class="contact-text">
+                <span class="contact-label">Email</span>
+                <span class="contact-val" data-editable id="cv-email">sohaybtal1@gmail.com</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="tel:0704559390" id="link-phone" class="contact-item">
+              <span class="contact-icon phone-bg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </span>
+              <div class="contact-text">
+                <span class="contact-label">Téléphone</span>
+                <span class="contact-val" data-editable id="cv-phone">0704559390</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="contact-item">
+              <span class="contact-icon github-bg" style="background: linear-gradient(135deg, #f59e0b, #d97706)">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </span>
+              <div class="contact-text">
+                <span class="contact-label">Adresse</span>
+                <span class="contact-val" data-editable id="cv-address" style="white-space: normal; overflow: visible; font-size: 0.8rem; line-height: 1.3;">Lot Arrayhane, Immeuble 4, N° 71, Route Sefrou, Fès</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Navigation Anchors (French Version) -->
+        <nav class="sidebar-nav">
+          <a href="#about" class="nav-link active">
+            <span class="nav-dot"></span> Profil
+          </a>
+          <a href="#skills" class="nav-link">
+            <span class="nav-dot"></span> Compétences
+          </a>
+          <a href="#experience" class="nav-link">
+            <span class="nav-dot"></span> Expériences
+          </a>
+          <a href="#education" class="nav-link">
+            <span class="nav-dot"></span> Formations
+          </a>
+          <a href="#projects" class="nav-link">
+            <span class="nav-dot"></span> Projets
+          </a>
+          <a href="#contact" class="nav-link">
+            <span class="nav-dot"></span> Contact
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Right Scrollable Content Column -->
+    <main class="content-area">
+      
+      <!-- Section: Profile / About -->
+      <section id="about" class="content-section">
+        <h2 class="section-title">Profil Professionnel</h2>
+        <div class="card glass">
+          <p class="about-lead" data-editable id="cv-about-lead">
+            Ingénieur rigoureux motivé et passionné par les systèmes embarqués et la mécatronique.
+          </p>
+          <p class="about-text" data-editable id="cv-about-text">
+            Diplômé en Mécatronique Automobile (option Automobile) de l'École Supérieure d'Ingénierie Automobile et Aéronautique (ESI2A), je poursuis actuellement mon parcours académique à l'Université Privée de Fès (UPF) pour me spécialiser davantage dans les Systèmes Embarqués. Mon objectif est de mettre mes compétences techniques en programmation microcontrôleurs, diagnostic et conception mécanique au service d'une entreprise innovante.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section: Compétences (Skills) -->
+      <section id="skills" class="content-section">
+        <div class="section-header-flex">
+          <h2 class="section-title">Compétences & Outils</h2>
+          <button class="btn btn-sm btn-outline btn-add-skill-category edit-only">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Ajouter une Catégorie
+          </button>
+        </div>
+
+        <div class="skills-grid" id="skills-container">
+          <!-- Skill Category: Systèmes Embarqués -->
+          <div class="card glass skill-card" data-category="embedded">
+            <div class="skill-category-header">
+              <h3 class="skill-category-title" data-editable id="skill-cat-title-1">Systèmes Embarqués</h3>
+              <button class="btn-delete-card edit-only" title="Supprimer la Catégorie" onclick="deleteCard(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              </button>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-1-1">Arduino (Microcontrôleurs)</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-1-1">90%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 90%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-1-2">ESP32 & IoT</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-1-2">80%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 80%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-1-3">Capteurs & Protocoles de com.</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-1-3">85%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 85%;"></div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-xs btn-outline btn-add-skill edit-only" onclick="addSkillToCategory(this)">
+              + Ajouter Compétence
+            </button>
+          </div>
+
+          <!-- Skill Category: Programmation & Outils Logiciels -->
+          <div class="card glass skill-card" data-category="software">
+            <div class="skill-category-header">
+              <h3 class="skill-category-title" data-editable id="skill-cat-title-2">Développement & Logiciels</h3>
+              <button class="btn-delete-card edit-only" title="Supprimer la Catégorie" onclick="deleteCard(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              </button>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-2-1">Langages C & C++</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-2-1">85%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 85%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-2-2">Python (Bases)</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-2-2">70%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 70%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-2-3">Matlab / Simulink</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-2-3">80%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 80%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-2-4">Catia V5 & Abaqus</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-2-4">75%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 75%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-2-5">Power BI & Excel</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-2-5">75%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 75%;"></div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-xs btn-outline btn-add-skill edit-only" onclick="addSkillToCategory(this)">
+              + Ajouter Compétence
+            </button>
+          </div>
+
+          <!-- Skill Category: Langues et Soft Skills -->
+          <div class="card glass skill-card" data-category="personal">
+            <div class="skill-category-header">
+              <h3 class="skill-category-title" data-editable id="skill-cat-title-3">Profil & Langues</h3>
+              <button class="btn-delete-card edit-only" title="Supprimer la Catégorie" onclick="deleteCard(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              </button>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-3-1">Français (Intermédiaire)</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-3-1">75%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 75%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-3-2">Anglais (Intermédiaire)</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-3-2">70%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 70%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-3-3">Allemand (Débutant)</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-3-3">30%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 30%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-3-4">Résolution de Problèmes</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-3-4">90%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 90%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name" data-editable id="skill-name-3-5">Esprit d'équipe & Innovation</span>
+                  <span class="skill-percentage" data-editable id="skill-perc-3-5">85%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar-fill" style="width: 85%;"></div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-xs btn-outline btn-add-skill edit-only" onclick="addSkillToCategory(this)">
+              + Ajouter Compétence
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Work Experience -->
+      <section id="experience" class="content-section">
+        <div class="section-header-flex">
+          <h2 class="section-title">Expérience Professionnelle</h2>
+          <button class="btn btn-sm btn-outline btn-add-experience edit-only">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Ajouter Expérience
+          </button>
+        </div>
+
+        <div class="timeline" id="experience-timeline">
+          
+          <!-- Experience 1 (Aptiv) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card glass timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title" data-editable id="exp-title-1">Stage PFE - GMAO</h3>
+                  <div class="company-name" data-editable id="exp-company-1">Aptiv, Meknès</div>
+                </div>
+                <div class="timeline-time-badge">
+                  <span class="time-period" data-editable id="exp-period-1">Fév 2024 - Juin 2024</span>
+                  <button class="btn-delete-card edit-only" title="Supprimer" onclick="deleteTimelineItem(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                  </button>
+                </div>
+              </div>
+              <p class="timeline-description" data-editable id="exp-desc-1">
+                Projet de fin d'études axé sur la mise en place et l'évaluation d'une application de GMAO (Gestion de Maintenance Assistée par Ordinateur).
+              </p>
+              <ul class="timeline-bullets" id="exp-bullets-1">
+                <li data-editable id="exp-bullet-1-1">Analyse des avantages d'un outil GMAO sur l'amélioration des performances de production de câblage automobile.</li>
+                <li data-editable id="exp-bullet-1-2">Optimisation de la communication opérationnelle entre les équipes de maintenance et de production.</li>
+              </ul>
+              <button class="btn btn-xs btn-outline btn-add-bullet edit-only" onclick="addBulletToTimeline(this)">
+                + Ajouter Détail
+              </button>
+            </div>
+          </div>
+
+          <!-- Experience 2 (Renault) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card glass timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title" data-editable id="exp-title-2">Stage d'Observation & Technique</h3>
+                  <div class="company-name" data-editable id="exp-company-2">Maison Renault, Fès</div>
+                </div>
+                <div class="timeline-time-badge">
+                  <span class="time-period" data-editable id="exp-period-2">Sept 2023 - Sept 2023</span>
+                  <button class="btn-delete-card edit-only" title="Supprimer" onclick="deleteTimelineItem(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                  </button>
+                </div>
+              </div>
+              <p class="timeline-description" data-editable id="exp-desc-2">
+                Stage immersif d'un mois au sein du département technique et service clientèle.
+              </p>
+              <ul class="timeline-bullets" id="exp-bullets-2">
+                <li data-editable id="exp-bullet-2-1">Découverte complète des opérations du service après-vente (SAV).</li>
+                <li data-editable id="exp-bullet-2-2">Observation des procédures de diagnostic automobile de la marque Renault.</li>
+              </ul>
+              <button class="btn btn-xs btn-outline btn-add-bullet edit-only" onclick="addBulletToTimeline(this)">
+                + Ajouter Détail
+              </button>
+            </div>
+          </div>
+
+          <!-- Experience 3 (Workshop) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card glass timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title" data-editable id="exp-title-3">Stage d'Initiation Pratique</h3>
+                  <div class="company-name" data-editable id="exp-company-3">Atelier de Diagnostic & Mécanique</div>
+                </div>
+                <div class="timeline-time-badge">
+                  <span class="time-period" data-editable id="exp-period-3">Juil 2022 - Août 2022</span>
+                  <button class="btn-delete-card edit-only" title="Supprimer" onclick="deleteTimelineItem(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                  </button>
+                </div>
+              </div>
+              <p class="timeline-description" data-editable id="exp-desc-3">
+                Double stage pratique focalisé sur l'électronique de bord et la mécanique automobile.
+              </p>
+              <ul class="timeline-bullets" id="exp-bullets-3">
+                <li data-editable id="exp-bullet-3-1">Apprentissage pratique dans un atelier de diagnostic électronique multimarques.</li>
+                <li data-editable id="exp-bullet-3-2">Travaux de maintenance physique des moteurs au sein d'un atelier mécanique.</li>
+              </ul>
+              <button class="btn btn-xs btn-outline btn-add-bullet edit-only" onclick="addBulletToTimeline(this)">
+                + Ajouter Détail
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Education (Formations) -->
+      <section id="education" class="content-section">
+        <div class="section-header-flex">
+          <h2 class="section-title">Formations & Diplômes</h2>
+        </div>
+
+        <div class="timeline" id="education-timeline">
+          <!-- Education 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot" style="border-color: var(--accent); box-shadow: 0 0 10px var(--accent);"></div>
+            <div class="card glass timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title" data-editable id="edu-title-1">Cycle d'Ingénieur en Systèmes Embarqués</h3>
+                  <div class="company-name" data-editable id="edu-school-1" style="color: var(--accent)">Université Privée de Fès (UPF)</div>
+                </div>
+                <div class="timeline-time-badge">
+                  <span class="time-period" data-editable id="edu-period-1">Oct 2025 - Juin 2027</span>
+                </div>
+              </div>
+              <p class="timeline-description" data-editable id="edu-desc-1">
+                Approfondissement dans le domaine des systèmes embarqués, de l'IoT et de l'électronique programmée pour l'industrie technologique.
+              </p>
+            </div>
+          </div>
+
+          <!-- Education 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot" style="border-color: var(--accent); box-shadow: 0 0 10px var(--accent);"></div>
+            <div class="card glass timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title" data-editable id="edu-title-2">Ingénieur en Mécatronique Automobile</h3>
+                  <div class="company-name" data-editable id="edu-school-2" style="color: var(--accent)">École Supérieure d'Ingénierie Automobile et Aéronautique (ESI2A)</div>
+                </div>
+                <div class="timeline-time-badge">
+                  <span class="time-period" data-editable id="edu-period-2">Oct 2019 - Juin 2024</span>
+                </div>
+              </div>
+              <p class="timeline-description" data-editable id="edu-desc-2">
+                Filière Mécatronique, Option Automobile. Formation de haut niveau combinant la mécanique, l'électronique de puissance et l'informatique industrielle embarquée. Diplôme obtenu avec succès lors de la promotion académique 2023-2024.
+              </p>
+            </div>
+          </div>
+
+          <!-- Education 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot" style="border-color: var(--accent); box-shadow: 0 0 10px var(--accent);"></div>
+            <div class="card glass timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title" data-editable id="edu-title-3">Baccalauréat en Génie Électrique</h3>
+                  <div class="company-name" data-editable id="edu-school-3" style="color: var(--accent)">Lycée Lahacen Lyoucie, Sefrou</div>
+                </div>
+                <div class="timeline-time-badge">
+                  <span class="time-period" data-editable id="edu-period-3">Nov 2018 - Juin 2019</span>
+                </div>
+              </div>
+              <p class="timeline-description" data-editable id="edu-desc-3">
+                Bases solides en électronique numérique, réseaux électriques et sciences de l'ingénieur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Projects -->
+      <section id="projects" class="content-section">
+        <div class="section-header-flex flex-column-mobile gap-3">
+          <h2 class="section-title margin-bottom-none">Projets Réalisés</h2>
+          
+          <!-- Projects Interactive Filter Chips -->
+          <div class="project-filters" id="project-filters-container">
+            <button class="filter-chip active" data-filter="all">Tous</button>
+            <button class="filter-chip" data-filter="embedded">Embarqué</button>
+            <button class="filter-chip" data-filter="software">IA & Image</button>
+          </div>
+
+          <button class="btn btn-sm btn-outline btn-add-project edit-only">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Ajouter Projet
+          </button>
+        </div>
+
+        <div class="projects-grid" id="projects-container">
+          
+          <!-- Project 1 (ANPR) -->
+          <div class="project-card card glass show" data-project-cat="software">
+            <div class="project-media-placeholder project-gradient-1">
+              <div class="proj-shapes">
+                <div class="shape circle-shape"></div>
+                <div class="shape square-shape"></div>
+              </div>
+              <span class="proj-badge">Reconnaissance</span>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <h3 class="project-card-title" data-editable id="proj-title-1">Système ANPR (Lecture de plaques)</h3>
+                <button class="btn-delete-card edit-only" title="Supprimer" onclick="deleteProject(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                </button>
+              </div>
+              <p class="project-description" data-editable id="proj-desc-1">
+                Conception d'un système de reconnaissance automatique des plaques d'immatriculation (Automatic Number Plate Recognition). Permet la capture et la numérisation des plaques à la volée.
+              </p>
+              <div class="project-tags">
+                <span class="tag" data-editable id="proj-tag-1-1">Python</span>
+                <span class="tag" data-editable id="proj-tag-1-2">OpenCV</span>
+                <span class="tag" data-editable id="proj-tag-1-3">ANPR</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sm"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                  Plus d'infos
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 (GPS Tracker) -->
+          <div class="project-card card glass show" data-project-cat="embedded">
+            <div class="project-media-placeholder project-gradient-2">
+              <div class="proj-shapes">
+                <div class="shape triangle-shape"></div>
+                <div class="shape ring-shape"></div>
+              </div>
+              <span class="proj-badge">Localisation</span>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <h3 class="project-card-title" data-editable id="proj-title-2">Traqueur GPS Intelligent</h3>
+                <button class="btn-delete-card edit-only" title="Supprimer" onclick="deleteProject(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                </button>
+              </div>
+              <p class="project-description" data-editable id="proj-desc-2">
+                Développement d'un GPS Tracker embarqué avec communication sans fil pour la transmission en temps réel des coordonnées géographiques vers une interface de suivi cartographique.
+              </p>
+              <div class="project-tags">
+                <span class="tag" data-editable id="proj-tag-2-1">Arduino</span>
+                <span class="tag" data-editable id="proj-tag-2-2">Module GPS/GPRS</span>
+                <span class="tag" data-editable id="proj-tag-2-3">IoT</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sm"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                  Plus d'infos
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 (Arduino Multi-Capteurs) -->
+          <div class="project-card card glass show" data-project-cat="embedded">
+            <div class="project-media-placeholder project-gradient-3">
+              <div class="proj-shapes">
+                <div class="shape circle-shape"></div>
+                <div class="shape lines-shape"></div>
+              </div>
+              <span class="proj-badge">Arduino</span>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <h3 class="project-card-title" data-editable id="proj-title-3">Projets Domotiques & Capteurs</h3>
+                <button class="btn-delete-card edit-only" title="Supprimer" onclick="deleteProject(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                </button>
+              </div>
+              <p class="project-description" data-editable id="proj-desc-3">
+                Conception et programmation de multiples prototypes interactifs à base de cartes Arduino (Nano/Uno) exploitant divers capteurs physiques : température, humidité, ultrasons, PIR.
+              </p>
+              <div class="project-tags">
+                <span class="tag" data-editable id="proj-tag-3-1">C++ / C</span>
+                <span class="tag" data-editable id="proj-tag-3-2">Microcontrôleurs</span>
+                <span class="tag" data-editable id="proj-tag-3-3">Électronique</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sm"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                  Plus d'infos
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Extra Profile Details (Hobbies) -->
+      <section id="hobbies" class="content-section">
+        <h2 class="section-title">Loisirs & Centres d'intérêt</h2>
+        <div class="card glass" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 200px;">
+            <h4 style="font-family: var(--font-heading); margin-bottom: 0.5rem; color: var(--primary);">Football</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Pratique régulière favorisant l'esprit de compétition, la rigueur collective et la réactivité tactique.</p>
+          </div>
+          <div style="flex: 1; min-width: 200px;">
+            <h4 style="font-family: var(--font-heading); margin-bottom: 0.5rem; color: var(--primary);">Chasse</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Activité de plein air développant la patience, l'observation fine de l'environnement et l'attention aux détails.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Contact Me -->
+      <section id="contact" class="content-section">
+        <h2 class="section-title">Me Contacter</h2>
+        <div class="card glass">
+          <form id="contact-form" class="contact-form">
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="form-name">Nom complet</label>
+                <input type="text" id="form-name" placeholder="Ex. Youssef El Alami" required>
+              </div>
+              <div class="form-group">
+                <label for="form-email">Adresse Email</label>
+                <input type="email" id="form-email" placeholder="Ex. youssef@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="form-subject">Sujet</label>
+              <input type="text" id="form-subject" placeholder="Ex. Proposition d'entretien / Opportunité" required>
+            </div>
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" rows="5" placeholder="Bonjour Sohayb, j'aimerais échanger avec vous concernant une offre d'emploi..." required></textarea>
+            </div>
+            <div class="form-actions-flex">
+              <button type="submit" class="btn btn-primary" id="btn-submit-contact">
+                <span class="btn-text">Envoyer le message</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+              <div class="form-status" id="contact-status"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> <span data-editable id="cv-footer-name">Talouzte Sohayb</span>. Tous droits réservés.</p>
+        <button id="admin-inbox-trigger" class="admin-gear-btn" title="Voir les messages reçus">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </button>
+      </footer>
+    </main>
+  </div>
+
+  <!-- FLOATING INTERACTIVE WIDGET PANEL -->
+  <div class="control-panel glass">
+    <!-- Mini indicator for editing state -->
+    <div class="saving-indicator" id="save-status">
+      <span class="saving-dot"></span>
+      <span class="saving-text">Sauvegardé</span>
+    </div>
+    
+    <div class="control-buttons">
+      <!-- Light / Dark Mode Toggle -->
+      <button class="control-btn" id="theme-toggle" title="Changer l'apparence">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <!-- Print / Export to PDF -->
+      <button class="control-btn" id="pdf-download" title="Imprimer ou Enregistrer en PDF">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      </button>
+
+      <!-- Edit Mode Toggle -->
+      <button class="control-btn" id="edit-mode-toggle" title="Personnaliser en direct">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="edit-icon"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+        <span class="control-text">Éditer</span>
+      </button>
+      
+      <!-- Reset/JSON actions (Shown only when in Edit Mode) -->
+      <div class="edit-actions-dropdown edit-only-inline">
+        <button class="control-btn btn-danger" id="btn-reset-cv" title="Réinitialiser">
+          Reset
+        </button>
+        <button class="control-btn btn-secondary" id="btn-export-cv" title="Exporter en fichier JSON">
+          Exporter
+        </button>
+        <button class="control-btn btn-secondary" id="btn-import-cv-trigger" title="Importer un fichier JSON">
+          Importer
+        </button>
+        <input type="file" id="cv-import-file" style="display: none;" accept=".json">
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT MESSAGES INBOX MODAL (HIDDEN ADMIN AREA) -->
+  <div class="modal-overlay" id="inbox-modal">
+    <div class="modal-card glass">
+      <div class="modal-header">
+        <h3>Boîte de réception des contacts</h3>
+        <button class="modal-close" id="inbox-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-actions-bar">
+          <span class="message-count" id="inbox-msg-count">0 message(s) reçu(s)</span>
+          <button class="btn btn-xs btn-danger" id="btn-clear-inbox">Tout supprimer</button>
+        </div>
+        <div class="inbox-list" id="inbox-messages-container">
+          <!-- Dynamically populated messages -->
+          <div class="no-messages">Aucun message de contact reçu pour le moment.</div>
+        </div>
+      </div>
+    </div>
+  <!-- LIGHTBOX PORTRAIT PHOTO MODAL -->
+  <div class="modal-overlay" id="avatar-lightbox">
+    <div class="lightbox-card">
+      <button class="lightbox-close" id="lightbox-close-btn" title="Fermer">&times;</button>
+      <img src="profile.jpg" alt="Talouzte Sohayb" class="lightbox-img">
+    </div>
+  </div>
+
+  <script src="script.js?v=1.0.1"></script>
+</body>
+</html>
