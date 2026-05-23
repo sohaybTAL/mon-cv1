@@ -1635,6 +1635,7 @@ body {
   .bg-glow, 
   .control-panel,
   .sidebar-nav,
+  .sidebar-pdf-widget,
   .project-filters,
   .edit-only,
   .edit-only-inline,
@@ -2048,4 +2049,21 @@ body {
     max-width: 90vw;
     border-radius: 16px;
   }
+}
+
+/* Sidebar PDF Actions Widget */
+.sidebar-pdf-widget {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  border-top: 1px solid var(--border-glass);
+  padding-top: 1.5rem;
+}
+
+.btn-full-width {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+  border-radius: 14px;
 }

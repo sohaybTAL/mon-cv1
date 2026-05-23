@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Core Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=1.0.1">
+  <link rel="stylesheet" href="style.css?v=1.0.2">
 </head>
 <body>
   
@@ -87,8 +87,20 @@
           </li>
         </ul>
 
+        <!-- PDF Actions Widget (Visible to everyone) -->
+        <div class="sidebar-pdf-widget">
+          <a href="cv.pdf" target="_blank" class="btn btn-primary btn-full-width" id="btn-view-pdf" title="Ouvrir le CV PDF dans un nouvel onglet">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sm"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>Voir / Télécharger le PDF</span>
+          </a>
+          <button class="btn btn-outline btn-full-width" id="btn-print-web" title="Générer et imprimer le CV Web au format A4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sm"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            <span>Imprimer la version Web</span>
+          </button>
+        </div>
+
         <!-- Navigation Anchors (French Version) -->
-        <nav class="sidebar-nav">
+        <nav class="sidebar-nav" style="margin-top: 0; border-top: none; padding-top: 0;">
           <a href="#about" class="nav-link active">
             <span class="nav-dot"></span> Profil
           </a>
@@ -718,6 +730,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=1.0.1"></script>
+  <script src="script.js?v=1.0.2"></script>
 </body>
 </html>

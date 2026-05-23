@@ -745,6 +745,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Imprimer ou Générer PDF de la version Web
+  const printWebBtn = document.getElementById('btn-print-web');
+  if (printWebBtn) {
+    printWebBtn.addEventListener('click', () => {
+      if (state.editMode) {
+        const activeEl = document.activeElement;
+        if (activeEl) activeEl.blur();
+      }
+      window.print();
+    });
+  }
+
   // Modal Admin Inbox
   adminInboxTrigger.addEventListener('click', () => {
     renderInboxMessages();
