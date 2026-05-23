@@ -32,7 +32,7 @@
           <div class="avatar-container">
             <div class="avatar-glow"></div>
             <div class="avatar-inner">
-              <img src="profile.jpg" alt="Talouzte Sohayb" class="avatar-img" id="cv-avatar-img">
+              <img src="profile.jpg" alt="Talouzte Sohayb" class="avatar-img" id="cv-avatar-img" onclick="document.getElementById('avatar-lightbox').classList.add('show');">
             </div>
             <!-- Hidden overlay in edit mode to change color -->
             <div class="avatar-edit-overlay">
@@ -709,10 +709,11 @@
         </div>
       </div>
     </div>
+  </div>
   <!-- LIGHTBOX PORTRAIT PHOTO MODAL -->
-  <div class="modal-overlay" id="avatar-lightbox">
+  <div class="modal-overlay" id="avatar-lightbox" onclick="if(event.target===this)this.classList.remove('show');">
     <div class="lightbox-card">
-      <button class="lightbox-close" id="lightbox-close-btn" title="Fermer">&times;</button>
+      <button class="lightbox-close" id="lightbox-close-btn" title="Fermer" onclick="document.getElementById('avatar-lightbox').classList.remove('show');">&times;</button>
       <img src="profile.jpg" alt="Talouzte Sohayb" class="lightbox-img">
     </div>
   </div>
