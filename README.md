@@ -1,1 +1,1 @@
-jout du lightbox et téléchargement PDF
+ajout du lightbox et téléchargement PDF
