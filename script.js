@@ -792,6 +792,182 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
+  // Moteur de Particules Technologiques Interactives
+  // ==========================================================================
+
+  function initTechParticles() {
+    const canvas = document.getElementById('tech-particles-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    const particles = [];
+    let maxParticles = 55;
+    const connectionDistance = 120;
+    const mouse = { x: null, y: null, active: false, radius: 180 };
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      if (window.innerWidth < 768) {
+        maxParticles = 25;
+      } else {
+        maxParticles = 55;
+      }
+      spawnParticles();
+    }
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    });
+
+    window.addEventListener('mouseleave', () => {
+      mouse.active = false;
+    });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
+        this.size = Math.random() * 6 + 4; // 4px à 10px
+        this.type = Math.floor(Math.random() * 3); // 0 = Circuit, 1 = Microchip, 2 = Engrenage
+        this.angle = Math.random() * Math.PI * 2;
+        this.spinSpeed = (Math.random() - 0.5) * 0.012;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.angle += this.spinSpeed;
+
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
+
+        const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--particle-color').trim() || 'rgba(34, 211, 238, 0.2)';
+        ctx.fillStyle = particleColor;
+        ctx.strokeStyle = particleColor;
+        ctx.lineWidth = 1;
+
+        if (this.type === 0) {
+          // 1. Nœud de circuit (Dot + anneau)
+          ctx.beginPath();
+          ctx.arc(0, 0, this.size / 2.5, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(0, 0, this.size * 1.1, 0, Math.PI * 2);
+          ctx.stroke();
+        } else if (this.type === 1) {
+          // 2. Microprocesseur (Carré + broches)
+          const s = this.size;
+          ctx.fillRect(-s / 2, -s / 2, s, s);
+
+          ctx.beginPath();
+          for (let i = -s / 3; i <= s / 3; i += s / 3) {
+            ctx.moveTo(i, -s / 2); ctx.lineTo(i, -s / 2 - 3);
+            ctx.moveTo(i, s / 2); ctx.lineTo(i, s / 2 + 3);
+            ctx.moveTo(-s / 2, i); ctx.lineTo(-s / 2 - 3, i);
+            ctx.moveTo(s / 2, i); ctx.lineTo(s / 2 + 3, i);
+          }
+          ctx.stroke();
+        } else {
+          // 3. Engrenage (Cercle + dents)
+          const r = this.size / 2;
+          ctx.beginPath();
+          ctx.arc(0, 0, r, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.beginPath();
+          for (let i = 0; i < 6; i++) {
+            const angle = (i * Math.PI) / 3;
+            ctx.moveTo(0, 0);
+            ctx.lineTo(Math.cos(angle) * (r + 3), Math.sin(angle) * (r + 3));
+          }
+          ctx.stroke();
+
+          ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--bg-app').trim() || '#090d16';
+          ctx.beginPath();
+          ctx.arc(0, 0, r * 0.45, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+    }
+
+    function spawnParticles() {
+      particles.length = 0;
+      for (let i = 0; i < maxParticles; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      const baseLineColor = getComputedStyle(document.documentElement).getPropertyValue('--particle-line').trim();
+      const rgbaMatch = baseLineColor.match(/rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*[^)]+\)/);
+
+      for (let i = 0; i < particles.length; i++) {
+        const p1 = particles[i];
+
+        if (mouse.active && mouse.x !== null) {
+          const dx = p1.x - mouse.x;
+          const dy = p1.y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < mouse.radius) {
+            const alpha = (1 - dist / mouse.radius) * 0.16;
+            ctx.strokeStyle = rgbaMatch ? `rgba(${rgbaMatch[1]}, ${rgbaMatch[2]}, ${rgbaMatch[3]}, ${alpha})` : (state.theme === 'dark' ? `rgba(129,140,248,${alpha})` : `rgba(79,70,229,${alpha})`);
+            ctx.lineWidth = 1.1;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < connectionDistance) {
+            const alpha = (1 - dist / connectionDistance) * 0.08;
+            ctx.strokeStyle = rgbaMatch ? `rgba(${rgbaMatch[1]}, ${rgbaMatch[2]}, ${rgbaMatch[3]}, ${alpha})` : (state.theme === 'dark' ? `rgba(129,140,248,${alpha})` : `rgba(79,70,229,${alpha})`);
+            ctx.lineWidth = 0.75;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    requestAnimationFrame(animate);
+  }
+
+  // ==========================================================================
   // Lancement des Initialisations
   // ==========================================================================
   
@@ -799,4 +975,5 @@ document.addEventListener('DOMContentLoaded', () => {
   loadCVData();
   attachInputListenersToEditables();
   loadMessages();
+  initTechParticles();
 });

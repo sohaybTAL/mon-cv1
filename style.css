@@ -43,6 +43,8 @@
   --blob-1: rgba(99, 102, 241, 0.12);
   --blob-2: rgba(192, 132, 252, 0.1);
   --blob-3: rgba(34, 211, 238, 0.08);
+  --particle-color: rgba(34, 211, 238, 0.22);
+  --particle-line: rgba(99, 102, 241, 0.08);
 }
 
 /* Light Theme Variables */
@@ -71,6 +73,8 @@
   --blob-1: rgba(99, 102, 241, 0.06);
   --blob-2: rgba(147, 51, 234, 0.05);
   --blob-3: rgba(8, 145, 178, 0.04);
+  --particle-color: rgba(8, 145, 178, 0.16);
+  --particle-line: rgba(79, 70, 229, 0.06);
 }
 
 /* ==========================================================================
@@ -1633,6 +1637,7 @@ body {
   }
 
   .bg-glow, 
+  #tech-particles-canvas,
   .control-panel,
   .sidebar-nav,
   .sidebar-pdf-widget,
@@ -2066,4 +2071,16 @@ body {
   padding: 0.75rem 1.25rem;
   font-size: 0.85rem;
   border-radius: 14px;
+}
+
+/* Interactive Background Canvas */
+#tech-particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background: transparent;
 }
