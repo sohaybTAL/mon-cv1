@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Core Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=1.0.4">
+  <link rel="stylesheet" href="style.css?v=1.0.9">
 </head>
 <body>
   
@@ -34,7 +34,7 @@
           <div class="avatar-container">
             <div class="avatar-glow"></div>
             <div class="avatar-inner">
-              <img src="profile.jpg" alt="Talouzte Sohayb" class="avatar-img" id="cv-avatar-img" onclick="document.getElementById('avatar-lightbox').classList.add('show');">
+              <img src="profile.jpg" alt="Talouzte Sohayb" class="avatar-img" id="cv-avatar-img">
             </div>
             <!-- Hidden overlay in edit mode to change color -->
             <div class="avatar-edit-overlay">
@@ -709,10 +709,43 @@
   <div class="modal-overlay" id="inbox-modal">
     <div class="modal-card glass">
       <div class="modal-header">
-        <h3>Boîte de réception des contacts</h3>
+        <h3>Tableau de Bord Administrateur</h3>
         <button class="modal-close" id="inbox-close-btn">&times;</button>
       </div>
       <div class="modal-body">
+        <!-- Dashboard Statistics Grid -->
+        <div class="admin-stats-grid">
+          <div class="stats-card">
+            <div class="stats-icon visits-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+            <div class="stats-info">
+              <span class="stats-val" id="stats-visits">...</span>
+              <span class="stats-label">Visites Totales</span>
+            </div>
+          </div>
+          
+          <div class="stats-card">
+            <div class="stats-icon pdf-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div class="stats-info">
+              <span class="stats-val" id="stats-pdf">...</span>
+              <span class="stats-label">CV PDF Téléchargés</span>
+            </div>
+          </div>
+
+          <div class="stats-card">
+            <div class="stats-icon conversion-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <div class="stats-info">
+              <span class="stats-val" id="stats-conversion">...</span>
+              <span class="stats-label">Taux d'Intérêt</span>
+            </div>
+          </div>
+        </div>
+
         <div class="modal-actions-bar">
           <span class="message-count" id="inbox-msg-count">0 message(s) reçu(s)</span>
           <button class="btn btn-xs btn-danger" id="btn-clear-inbox">Tout supprimer</button>
@@ -732,6 +765,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=1.0.4"></script>
+  <script src="script.js?v=1.0.9"></script>
 </body>
 </html>

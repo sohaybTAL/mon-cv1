@@ -34,6 +34,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const avatarContainer = document.querySelector('.avatar-container');
   const avatarLightbox = document.getElementById('avatar-lightbox');
   const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+
+  // ==========================================================================
+  // Statistiques de Visites Serverless (CounterAPI)
+  // ==========================================================================
+
+  function trackVisit() {
+    const isAdmin = sessionStorage.getItem('admin_unlocked') === 'true';
+    if (isAdmin) return;
+
+    if (!sessionStorage.getItem('visited_session')) {
+      fetch('https://api.counterapi.dev/v1/projects/talouzte-sohayb-cv/counters/visits/hit')
+        .then(() => {
+          sessionStorage.setItem('visited_session', 'true');
+        })
+        .catch(err => console.warn('Error tracking visit (offline/adblock):', err));
+    }
+  }
+
+  function trackPdfDownload() {
+    const isAdmin = sessionStorage.getItem('admin_unlocked') === 'true';
+    if (isAdmin) return;
+
+    fetch('https://api.counterapi.dev/v1/projects/talouzte-sohayb-cv/counters/pdf/hit')
+      .catch(err => console.warn('Error tracking PDF download:', err));
+  }
+
+  // Bind aux clics des boutons de téléchargement de CV pour le public
+  const btnViewPdf = document.getElementById('btn-view-pdf');
+  if (btnViewPdf) {
+    btnViewPdf.addEventListener('click', trackPdfDownload);
+  }
+  
+  const btnPrintWeb = document.getElementById('btn-print-web');
+  if (btnPrintWeb) {
+    btnPrintWeb.addEventListener('click', trackPdfDownload);
+  }
+
+  // Lancement du suivi silencieux du visiteur
+  trackVisit();
   
   // Restauration de la session admin si active
   if (sessionStorage.getItem('admin_unlocked') === 'true') {
@@ -264,6 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const ADMIN_PASSWORD = 'sohayb123';
   let avatarClickCount = 0;
+  let avatarClickTimer = null;
 
   avatarContainer.addEventListener('click', () => {
     if (state.editMode) {
@@ -276,17 +316,14 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Ouvrir le lightbox pour afficher la photo en grand
-    console.log("Avatar cliqué. Mode édition =", state.editMode);
-    if (avatarLightbox) {
-      console.log("Ajout de la classe 'show' sur #avatar-lightbox");
-      avatarLightbox.classList.add('show');
-    } else {
-      console.warn("Élément #avatar-lightbox introuvable dans le DOM !");
-    }
-
     // Easter egg de déverrouillage de l'édition : cliquez 5 fois sur la photo
     avatarClickCount++;
+
+    if (avatarClickTimer) {
+      clearTimeout(avatarClickTimer);
+      avatarClickTimer = null;
+    }
+
     if (avatarClickCount === 5) {
       avatarClickCount = 0;
       const input = prompt("Entrez le mot de passe administrateur pour déverrouiller l'édition :");
@@ -300,6 +337,18 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (input !== null) {
         alert("Mot de passe incorrect.");
       }
+    } else {
+      // Retarder l'ouverture du lightbox pour permettre le clic multiple rapide
+      avatarClickTimer = setTimeout(() => {
+        avatarClickCount = 0;
+        console.log("Avatar cliqué. Mode édition =", state.editMode);
+        if (avatarLightbox) {
+          console.log("Ajout de la classe 'show' sur #avatar-lightbox");
+          avatarLightbox.classList.add('show');
+        } else {
+          console.warn("Élément #avatar-lightbox introuvable dans le DOM !");
+        }
+      }, 300);
     }
   });
 
@@ -320,11 +369,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Fermeture du lightbox avec la touche Échap (Escape)
+  // Fermeture du lightbox ou du tableau de bord avec la touche Échap (Escape)
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (avatarLightbox && avatarLightbox.classList.contains('show')) {
         avatarLightbox.classList.remove('show');
+      }
+      if (inboxModal && inboxModal.classList.contains('show')) {
+        inboxModal.classList.remove('show');
       }
     }
   });
@@ -616,6 +668,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const activeEl = document.activeElement;
       if (activeEl) activeEl.blur();
     }
+    trackPdfDownload();
     window.print();
   });
 
@@ -766,9 +819,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function loadAdminStats() {
+    const visitsEl = document.getElementById('stats-visits');
+    const pdfEl = document.getElementById('stats-pdf');
+    const conversionEl = document.getElementById('stats-conversion');
+    
+    if (!visitsEl || !pdfEl || !conversionEl) return;
+
+    visitsEl.textContent = '...';
+    pdfEl.textContent = '...';
+    conversionEl.textContent = '...';
+
+    Promise.all([
+      fetch('https://api.counterapi.dev/v1/projects/talouzte-sohayb-cv/counters/visits').then(res => res.json()),
+      fetch('https://api.counterapi.dev/v1/projects/talouzte-sohayb-cv/counters/pdf').then(res => res.json())
+    ])
+    .then(([visitsData, pdfData]) => {
+      const visits = visitsData.count || 0;
+      const pdf = pdfData.count || 0;
+      const conversion = visits > 0 ? Math.round((pdf / visits) * 100) : 0;
+      
+      visitsEl.textContent = visits;
+      pdfEl.textContent = pdf;
+      conversionEl.textContent = `${conversion}%`;
+    })
+    .catch(err => {
+      console.warn('Error fetching admin stats:', err);
+      visitsEl.textContent = 'Erreur';
+      pdfEl.textContent = 'Erreur';
+      conversionEl.textContent = 'N/A';
+    });
+  }
+
   // Modal Admin Inbox
   adminInboxTrigger.addEventListener('click', () => {
     renderInboxMessages();
+    loadAdminStats();
     inboxModal.classList.add('show');
   });
 
