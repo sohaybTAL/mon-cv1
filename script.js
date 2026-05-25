@@ -320,6 +320,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Fermeture du lightbox avec la touche Échap (Escape)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (avatarLightbox && avatarLightbox.classList.contains('show')) {
+        avatarLightbox.classList.remove('show');
+      }
+    }
+  });
+
   editModeToggle.addEventListener('click', () => {
     state.editMode = !state.editMode;
     
